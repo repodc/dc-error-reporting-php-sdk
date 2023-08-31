@@ -22,6 +22,12 @@
             "DcTec\\DcErrorReportingPhpSdk\\Tests\\": "tests/"
         }
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/repodc/dc-error-reporting-php-sdk.git"
+        }
+    ],
     "minimum-stability": "stable",
     "prefer-stable": true
 }
