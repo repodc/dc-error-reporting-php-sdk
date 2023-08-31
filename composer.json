@@ -1,0 +1,27 @@
+{
+    "name": "dc-tec/dc-error-reporting-php-sdk",
+    "description": "SDK para integrar o sistema de alerta de erros com PHP",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vinicius Vidal",
+            "email": "vidal@tecnologiadc.com.br"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DcTec\\DcErrorReportingPhpSdk\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DcTec\\DcErrorReportingPhpSdk\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
