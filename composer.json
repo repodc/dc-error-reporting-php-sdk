@@ -24,7 +24,7 @@
     },
     "repositories": [
         {
-            "type": "vcs",
+            "type": "github",
             "url": "https://github.com/repodc/dc-error-reporting-php-sdk.git"
         }
     ],
