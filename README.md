@@ -131,3 +131,13 @@ Para acessar o log com os erros ocorridos, visite a url https://dc-error-reporti
 Substitua slug-sistema pelo nome do sistema no formato slug (letras minúsculas, sem caracteres especiais e substituindo espaço por "-")
 
 Exemplo: o nome do sistema é **Bablepet ERP (API)** então o slug ficará **bablepet-erp-api**
+
+## Testes
+
+Ao realizar os testes do SDK durante o desenvolvimento, por favor coloque a palavra **TEST** antes do nome do sistema conforme o exemplo:
+
+```
+$dcErrorReporting = new DcErrorReportingSdk('TEST Bablepet ERP (API)', getenv('APP_ENV'), getenv('DC_ERROR_REPORTING_TOKEN'));
+```
+
+Lembre-se de tirar a palavra **TEST** ao fim dos testes, antes de fazer o commit. Dessa forma os analistas vão saber que a notificação que receberam é de teste apenas.
