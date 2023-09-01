@@ -67,6 +67,16 @@ O sistema irá notificar os analistas da DC
 
    Ao instanciar a classe **DcErrorReportingSdk** informe o nome do sistema corretamente no primeiro parâmetro
 
+4. Caso haja a necessidade de reportar erros que estão contidos em um bloco de **try ... catch** basta usar a função helper do Laravel **report()**
+
+   ```php
+   try {
+      //code...
+   } catch (\Exception $e) {
+       report($e);
+   }
+   ```
+
 ## Passo a Passo para Integrar com sistema em PHP puro
 
 1. Variáveis de ambiente (.env)
@@ -98,6 +108,26 @@ O sistema irá notificar os analistas da DC
 
    Ao instanciar a classe **DcErrorReportingSdk** informe o nome do sistema corretamente no primeiro parâmetro
 
+4. Caso haja a necessidade de reportar erros que estão contidos em um bloco de **try ... catch** basta utilizar o mesmo SDK
+
+   ```php
+     try {
+       //código...
+      } catch (\Exception $e) {
+          $dcErrorReporting->send($e);
+      
+          //tratamento da exceção...
+      }
+   ```
+
 #
 
-E é isso, após configurado, qualquer erro / exceção disparada pelo sistema será notificado aos analistas da DC
+E é isso, após configurado, qualquer erro / exceção não tratado pelo sistema será notificado aos analistas da DC
+
+## Visualizar log de erros
+
+Para acessar o log com os erros ocorridos, visite a url https://dc-error-reporting.dctec.dev/api/error_report/slug-sistema
+
+Substitua slug-sistema pelo nome do sistema no formato slug (letras minúsculas, sem caracteres especiais e substituindo espaço por "-")
+
+Exemplo: o nome do sistema é **Bablepet ERP (API)** então o slug ficará **bablepet-erp-api**
