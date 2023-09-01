@@ -26,6 +26,7 @@ class DcErrorReportingSdk {
             $data = [
                 'system_name' => $this->systemName,
                 'environment' => $this->enviroment,
+                'requested_url' => $this->getServerRequestedUrl(),
                 'error' => $th->__toString(),
             ];
 
@@ -50,5 +51,15 @@ class DcErrorReportingSdk {
         } catch (\Throwable $th) {
             // Se der erro nada vai ser feito
         }
+    }
+
+    private function getServerRequestedUrl() {
+        $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+        $host = $_SERVER['HTTP_HOST'];
+        $base_url = $protocol . "://" . $host;
+
+        $current_url = $base_url . $_SERVER['REQUEST_URI'];
+
+        return $current_url;
     }
 }
