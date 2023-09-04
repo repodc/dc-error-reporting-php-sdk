@@ -67,7 +67,7 @@ O sistema irá notificar os analistas da DC
 
    Ao instanciar a classe **DcErrorReportingSdk** informe o nome do sistema corretamente no primeiro parâmetro
 
-4. Caso haja a necessidade de reportar erros que estão contidos em um bloco de **try ... catch** basta usar a função helper do Laravel **report()**
+4. (OPCIONAL) Caso haja a necessidade de reportar erros que estão contidos em um bloco de **try ... catch** basta usar a função helper do Laravel **report()**
 
    ```php
    try {
