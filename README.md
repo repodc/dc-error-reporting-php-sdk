@@ -134,10 +134,8 @@ Exemplo: o nome do sistema é **Bablepet ERP (API)** então o slug ficará **bab
 
 ## Testes
 
-Ao realizar os testes do SDK durante o desenvolvimento, por favor coloque a palavra **TEST** antes do nome do sistema conforme o exemplo:
+Ao realizar os testes do SDK durante o desenvolvimento, altere o valor da variável de ambiente **APP_ENV** para "test":
 
-```
-$dcErrorReporting = new DcErrorReportingSdk('TEST Bablepet ERP (API)', getenv('APP_ENV'), getenv('DC_ERROR_REPORTING_TOKEN'));
-```
+Dessa forma nenhum analista será notificado quando houver erro, mas o log do erro aparecerá em https://dc-error-reporting.dctec.dev/api/error_report/slug-sistema/test
 
-Lembre-se de tirar a palavra **TEST** ao fim dos testes, antes de fazer o commit. Dessa forma os analistas vão saber que a notificação que receberam é de teste apenas.
+Note que ao final da url foi adicionado o **/test**, neste endpoint será mostrado apenas os erros do ambiente de teste.
